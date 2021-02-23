@@ -11,6 +11,7 @@ def linear_regression(x_values,  y_values,  step_size, tolerance, max_iterations
     w1 = 0
     magnitude = float('inf')
     counter = 0
+    rss_counter = []
 
     while magnitude >= tolerance and not(counter >= max_iterations):
         errors = [w0 + x * w1 - y for x, y in zip(x_values, y_values)]
@@ -23,12 +24,14 @@ def linear_regression(x_values,  y_values,  step_size, tolerance, max_iterations
        
         magnitude = sqrt(derivative_w0 ** 2 + derivaitve_w1 ** 2)
 
+        rss = sum([x ** 2 for x in errors])
+
         #Print details
         print("Iteration: ", counter)
         print("errors = ", errors)
         print("magnitude = ", magnitude)
-        print("w0 = ", w0, ", w1 = ", w1, "\n")
-        print(derivative_w0 ** 2)
+        print("w0 = ", w0, ", w1 = ", w1)
+        print("rss =",rss, "\n")
         
         counter = counter + 1
 
@@ -37,3 +40,4 @@ def linear_regression(x_values,  y_values,  step_size, tolerance, max_iterations
 #Test it out
 weights = linear_regression(x_sample, y_sample, step_sample, tolerance_sample, iterations_sample)
 print("Final weights = ",  weights)
+
