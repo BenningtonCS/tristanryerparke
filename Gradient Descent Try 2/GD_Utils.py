@@ -82,28 +82,33 @@ def add_polynomials(x,num=1):
         x.insert(i-1,column_name,column_contents,True)
     return x
 
-def normalize(input_data,n_type="max/min",input_min=None,input_max=None):
-    if n_type == "max/min":
-        
-        normalized_data = input_data.copy()
-        print("Data has these columns: ",normalized_data.columns)
-        column_maxes = []
-        column_mins = []
+def normalize(input_data,input_bounds=None):
+    
+    normalized_data = input_data.copy()
+    print("Data has these columns: ",normalized_data.columns)
+    column_bounds = []
 
-        for i, column in enumerate(input_data.columns):
-            #see if there are external min/max values
-            if input_max != None:
-                data_min = input_min[i]
-                data_max = input_max[i]
-            else:
-                data_min = normalized_data[column].min()
-                data_max = normalized_data[column].max()
-            normalized_data[column] = input_data[column] - data_min / data_max - data_min
-            column_maxes.append(data_min)
-            column_mins.append(data_max)
-        
-        print("Maxes =",column_maxes)
-        print("Mins =",column_mins)
+    for i, column in enumerate(input_data.columns):
+        #see if there are external min/max values
+        if input_bounds != None:
+            data_min = input_bounds[i][0]
+            data_max = input_bounds[i][1]
+        else:
+            data_min = normalized_data[column].min()
+            data_max = normalized_data[column].max()
+        normalized_data[column] = (input_data[column] - data_min) / (data_max - data_min)
+        column_bounds.append((data_min,data_max))
+    
+    return normalized_data, column_bounds
 
-        return normalized_data, column_maxes, column_mins
+def un_normalize(input_data,orig_bounds):
+    print("Un-normalizing")
 
+    data_min = orig_bounds[0][0]
+    data_max = orig_bounds[0][1]
+
+    un_data = (input_data * (data_max - data_min)) + data_min
+    column_bounds = (data_min,data_max)
+    print("new bounds = ",column_bounds)
+    
+    return un_data
