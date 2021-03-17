@@ -4,6 +4,8 @@ The file GD_Utils.py contains several functions which provide methods for workin
 
 Since I am still having issues with this and the concepts around training/validation/test, I am only using the data from housing "TotalFinishedArea", as well as "TotalFinishedArea"^2 as input.
 
+Psuedocode:
+
 Prep:
 
 	Beginning with housing_data_prep.py the data is shuffled and split into three sets:
