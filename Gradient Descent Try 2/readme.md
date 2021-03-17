@@ -8,7 +8,8 @@ Validation 10%
 Test 10%
 
 Training:
-	Then in the Train_Model.py file, the training data is imported and split into inputs and outputs.
+	
+	In the Train_Model.py file, the training data is imported and split into inputs and outputs.
 	The script then normalizes the data to a 0-1 scale, saving the maxes and mins for later.
 
 	This data is then sent to the Gradient Descent function and a row of 1s are added to the beginning of the input.
@@ -38,6 +39,7 @@ Training:
 
 
 Validation:
+	
 	In Validate_Model.py, the validation data is imported.
 
 	The saved model weights and original dataset bounds are imported.
