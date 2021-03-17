@@ -66,6 +66,7 @@ The  MSE when using the validation set decreases but remains in the billions.
 Looking at both graphs, the y_hat for the validation set does not particularly look like a bad approximation, although there are some extreme outliers. 
 
 I think my issue comes from confusion around normalization, or maybe just a typo/forgettful bad line of code.
+I have tried this with different shuffles of the training/validation/test data split and still experience the same issue.
 
 
 
