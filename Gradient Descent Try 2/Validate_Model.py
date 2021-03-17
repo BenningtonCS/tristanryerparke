@@ -46,7 +46,9 @@ print("MSE: ",MSE)
 #The MSE values seem way to high but decrease when the model is allowed more iterations and smaller tolerance.
 #Meaning that I am not overfitting but something is off (most likley with the un-normalization).
 
-
+plt.scatter(raw_val_inputs["TotalFinishedArea"],raw_val_outputs["TotalAppraisedValue"],color='blue')
+plt.scatter(raw_val_inputs["TotalFinishedArea"],val_y_hat,color='red')
+plt.show()
 
 
 
