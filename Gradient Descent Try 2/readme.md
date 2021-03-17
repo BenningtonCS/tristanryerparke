@@ -2,10 +2,14 @@ This files within this folder demonstrate Linear Regression using Gradient Desce
 
 The file GD_Utils.py contains several functions which provide methods for working with the data, and a major definition which performs the gradient descent.
 
-Beginning with housing_data_prep.py the data is shuffled and split into three sets:
-Training 80%
-Validation 10%
-Test 10%
+Since I am still having issues with this and the concepts around training/validation/test, I am only using the data from housing "TotalFinishedArea", as well as "TotalFinishedArea"^2 as input.
+
+Prep:
+
+	Beginning with housing_data_prep.py the data is shuffled and split into three sets:
+	Training 80%
+	Validation 10%
+	Test 10%
 
 Training:
 	
