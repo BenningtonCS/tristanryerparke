@@ -33,6 +33,7 @@ x = np.array(val_inputs)
 val_y_hat = x @ weights
 
 val_y_hat = gdu.un_normalize(val_y_hat,training_output_bounds)
+#The bounds of these do not seem right.
 
 val_y = np.array(raw_val_outputs.iloc[:, 0])
 
@@ -41,6 +42,9 @@ errors = val_y_hat - val_y
 MSE = sum(errors ** 2) / x.shape[0]
 
 print("MSE: ",MSE)
+#Issue
+#The MSE values seem way to high but decrease when the model is allowed more iterations and smaller tolerance.
+#Meaning that I am not overfitting but something is off (most likley with the un-normalization).
 
 
 

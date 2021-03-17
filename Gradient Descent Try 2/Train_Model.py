@@ -23,7 +23,7 @@ print("Normalizing outputs")
 training_outputs, output_bounds = gdu.normalize(raw_training_outputs) 
 
 #Train model
-results = gdu.gradient_descent(training_inputs, training_outputs, tolerance=0.001, max_iterations=10000, debug=True)
+results = gdu.gradient_descent(training_inputs, training_outputs, tolerance=0.001, max_iterations=5000, debug=True)
 
 #Save a file containing the model and the bounds of its inputs
 save_model_dict = {"weights":results["weights"],
@@ -36,6 +36,7 @@ pickle.dump(save_model_dict,open( "model1.p", "wb" ))
 plt.scatter(training_inputs["TotalFinishedArea"],training_outputs["TotalAppraisedValue"])
 plt.scatter(training_inputs["TotalFinishedArea"],results["y_hat"])
 plt.show()
+#looking at this normalized graph, the values seem good.
 
 
 

@@ -30,6 +30,7 @@ def gradient_descent(x_dataFrame, y_dataFrame, tolerance, max_iterations,step_si
 
         magnitude_sq = np.dot(derivatives,derivatives)
         alpha = step_size
+        #Bactracking Line Search
         if step_size == None:
             alpha = 1
             beta = 0.8
@@ -98,7 +99,7 @@ def normalize(input_data,input_bounds=None):
             data_max = normalized_data[column].max()
         normalized_data[column] = (input_data[column] - data_min) / (data_max - data_min)
         column_bounds.append((data_min,data_max))
-    
+    print(column_bounds)
     return normalized_data, column_bounds
 
 def un_normalize(input_data,orig_bounds):
@@ -108,7 +109,8 @@ def un_normalize(input_data,orig_bounds):
     data_max = orig_bounds[0][1]
 
     un_data = (input_data * (data_max - data_min)) + data_min
-    column_bounds = (data_min,data_max)
+    column_bounds = (un_data.min(),un_data.max())
+
     print("new bounds = ",column_bounds)
     
     return un_data

@@ -11,6 +11,7 @@ def divide_data(data, training_percent, validation_percent, shuffle):
     #Shuffle
     if shuffle:
         print("Shuffling data...")
+        np.random.seed(42)
         data.reindex(np.random.permutation(data.index)) 
 
     #Calculate integer size of each dataset
