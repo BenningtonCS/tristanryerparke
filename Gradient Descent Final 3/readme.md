@@ -6,7 +6,8 @@ This can be demonstrated with the following process:
 1. Pre-Processing
 
 	
-		Beginning with the preprocess_data.py, the data is imported and the two signifiagnt columns are selected for input and output.
+		Beginning with the preprocess_data.py: 
+		The data is imported and the two signifiagnt columns are selected for input and output.
 		These columns then have rows culled where the Total Appraised Value was greater than two million, 
 		and where data did not exist for Total Finished Area.
 		A function from the GD_Utils.py file then normalizes the whole dataset, 
