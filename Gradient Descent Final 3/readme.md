@@ -14,5 +14,9 @@ This can be demonstrated with the following process:
 	The two signifigant values from normalization are also saved to the folder in so that normalized values can be converted back to the range.
 
 2. 
-		
+	
+	Then, in train.py, the training dataset is imported and split into inputs and outputs. In the example script provided, 
+	
+	
+	
 	
