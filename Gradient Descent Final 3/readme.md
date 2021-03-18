@@ -36,7 +36,7 @@ This can be demonstrated with the following process:
 		Weights are saved to a local file to be referenced later.
 		A graph of the normalized data versus the normalized y_hat is shown to view the visual accuracy of the model.
 	
-		With tolerance 0.001 and max iterations = 1000, these weights and mse were produced:
+		With tolerance 0.001, x, x^2 and max iterations = 1000, these weights and mse were produced:
 		weights:  [ 0.03471246  2.0610451  -1.32873416]
 		MSE: 0.0026409661119723613
 		A 5000 iteration model with x, x^2 and x^3 scored a little better but not by much:
@@ -57,12 +57,18 @@ This can be demonstrated with the following process:
 		Scoring:
 		MSE:  0.003738713477811529
 		This is a little more error than the training set, but considering the number of outlying datapoints in the set, I think this difference is negligible.
+		The 5000 x, x^2 x^3 iteration model:
+		MSE:  0.003522480007606554
 	
 4. Testing
 	
 		In test.py the exact same validation process is performed with the test data.
 		The 1000 iteration model scored much better than on the validation dataset.
+		
 		MSE:  0.0029640192111095687
+		The 5000 x, x^2 x^3 iteration model:
+		MSE:  0.0026016822146469553
+		Seems to perform a little better.
 	
 	
 5. Additional script
