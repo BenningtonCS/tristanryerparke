@@ -5,12 +5,8 @@ import math
 
 
 def gradient_descent(x_dataFrame, y_dataFrame, tolerance, max_iterations,step_size=None, debug=False):
-    """Function to perform gradient descent on a dataset of x trying to predict y.
-    x must be at minimum a two-dimensional numpy array with the first column made up of ones.
-    y must be a one-dimensional numpy array with the same number of rows as x.
-    """
+   
     x_dataFrame.insert(0,"ones",np.ones(x_dataFrame.shape[0]),True)
-
     x = np.array(x_dataFrame)
     y = np.array(y_dataFrame.iloc[:, 0])
     
@@ -18,7 +14,6 @@ def gradient_descent(x_dataFrame, y_dataFrame, tolerance, max_iterations,step_si
     magnitude_sq = float('inf')
     w = np.zeros(x.shape[1])
     derivatives = np.zeros(x.shape[1])
-
     print("Training...")
     
     while True:
@@ -54,6 +49,9 @@ def gradient_descent(x_dataFrame, y_dataFrame, tolerance, max_iterations,step_si
         rss = sum(errors ** 2)
 
         iterations += 1
+
+        if iterations % 10 == 1:
+        print(iterations," Iterations")
         
         for i in range(0,w.shape[0]):
             w[i] = w[i] - derivatives[i] * alpha
@@ -100,6 +98,8 @@ def normalize(input_data,input_bounds=None):
         normalized_data[column] = (input_data[column] - data_min) / (data_max - data_min)
         column_bounds.append((data_min,data_max))
     print(column_bounds)
+
+    
     return normalized_data, column_bounds
 
 def un_normalize(input_data,orig_bounds):
