@@ -91,8 +91,10 @@ This can be demonstrated with the following process:
 	
 		An additional script predict_value_model1.py will import the weights from a training the model with train.py, 
 		and use them to predict a total apprasial value from a user inputted total finshed area. 
-		It does this by normalizing the value, applying it to the weights in a similar method to the validation and training sets. 
-		It then re-maps the output value to the scale of appraised values based on the entire dataset and prints it in dollar format.
+		It does this by normalizing the value, applying it to the weights 
+		in a similar method to the validation and training sets. 
+		It then re-maps the output value to the scale of appraised values 
+		based on the entire dataset and prints it in dollar format.
 	
 	
 	
