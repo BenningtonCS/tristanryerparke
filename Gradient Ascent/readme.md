@@ -68,7 +68,7 @@ Notice that the y_hat values are not very close to zero or one.
 	precision =  0.8
 	recall =  0.8571428571428571
 
-This model was allowed 10 training iterations, it performs much, much better:
+This model was allowed 10 training iterations, it performs much better:
 
 	y_hat =  [0.51452109 0.96022924 0.55406111 0.39581581 0.67999335 0.50155275
 	 0.82215394 0.15751251 0.48503669 0.91601275 0.04557918 0.68684785
