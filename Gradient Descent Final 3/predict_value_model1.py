@@ -13,7 +13,7 @@ usr_val = float(input("Please type the finished area of a home and press enter..
 usr_val = (usr_val - bounds[0][0]) / (bounds[0][1] - bounds[0][0])
 usr_frame = pd.DataFrame(data=[usr_val],columns=['usr_val'])
 
-usr_input = gdu.add_polynomial(usr_frame,num=2)
+usr_input = gdu.add_polynomial(usr_frame,num=3)
 usr_input.insert(0,"ones",np.ones(usr_input.shape[0]),True)
 x = np.array(usr_input)
 

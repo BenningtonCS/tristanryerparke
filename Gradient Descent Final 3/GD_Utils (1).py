@@ -51,9 +51,8 @@ def gradient_descent(x_dataFrame, y_dataFrame, tolerance, max_iterations,step_si
     while True:
         y_hat = np.matmul(x,w)
         errors = np.subtract(y_hat,y)
-        print(errors)
         for i in range(0,w.shape[0]):
-            derivatives[i] = sum(np.multiply(errors,x[:,i]))
+         derivatives[i] = sum(np.multiply(errors,x[:,i]))
         magnitude_sq = np.dot(derivatives,derivatives)
         
         #Backtracking Line Search

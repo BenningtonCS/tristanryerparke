@@ -12,7 +12,7 @@ validation_data = pd.read_csv("datasets/validation_data.csv")
 inputs = validation_data['TotalFinishedArea'].to_frame()
 outputs = validation_data['TotalAppraisedValue']
 
-inputs = gdu.add_polynomial(inputs,num=2)
+inputs = gdu.add_polynomial(inputs,num=3)
 
 inputs.insert(0,"ones",np.ones(inputs.shape[0]),True)
 x = np.array(inputs)

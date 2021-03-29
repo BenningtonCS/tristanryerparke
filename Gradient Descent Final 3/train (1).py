@@ -12,7 +12,7 @@ outputs = training_data['TotalAppraisedValue']
 
 inputs = gdu.add_polynomial(inputs,num=3)
 
-model = gdu.gradient_descent(inputs, outputs, tolerance=0.001, max_iterations=50)
+model = gdu.gradient_descent(inputs, outputs, tolerance=0.001, max_iterations=5000)
 
 weights = model["weights"]
 
