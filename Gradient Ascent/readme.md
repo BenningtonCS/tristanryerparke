@@ -26,3 +26,22 @@ Element 4 is equal to two as the word "awesome" appeared twice in the review.
 
 This vector form allows us to describe each review as a vector with respect to the entire dataset. This vector then becomes the input for the training, and each review status as positive or negative is the output.
 
+## Training ##
+
+In train_model.py, the preprocessed data is imported and a bias term is added.
+
+The weights are initalized and the stochastic gradient ascent is started. 
+With each major iteration, a y_hat is generated for each input x, error is calculated and the weights are updated.
+
+Once the number of max iterations are reached, the program saves the weights to the local directory via pickle.
+
+## Testing ##
+
+In test_model.py, the preprocessed test data is imported, bias term is added, and variables to record true positves, true negatives, false positives and false negatives are initialized. 
+A y_hat is then calculated by multiplying the test inputs with the weights from training. 
+This y_hat is then iterated through, analyzed for error, and the type of error is classified as tp, tn, fp, fn. These values are counted across each example of y_hat.
+Data about the accuracy of the model is printed.
+
+
+
+
