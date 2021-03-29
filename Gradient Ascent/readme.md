@@ -10,7 +10,7 @@ preprocess.py does this for both training and test sets, beginning by splitting 
 A dictionary is then created with the keys being a word and values being an integer which signifies that word. The length of the dictionary is the number of unique words in the given dataset. 
 The sentances are then converted into lists of integers, with the dictionary being the link between the two as such. 
 
-Dict: {"sucked":1,"this":2,"movie":3,"awsome":4",was":5}
+Dict: {"sucked":1,"this":2,"movie":3,"awsome":4",was":5}\n
 Sentance: ["this","movie","sucked"]
 Integer Sentance: [2,3,1]
 
