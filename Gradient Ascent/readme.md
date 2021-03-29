@@ -15,11 +15,13 @@ The sentances are then converted into lists of integers, with the dictionary bei
 	Integer Sentance: [2,3,1]
 
 These lists of integers allow creation of a dictionary-length vector where each element represents the use of a word.
+	
+	Sentance 1: "this","movie","sucked"]
+	Vector 1: [1,1,1,0,0]
+	Sentance 2: ["this","movie","was","awesome",awesome"]
+	Vector 2: [0,1,1,2,1]
 
-	Sentance: ["this","movie","was","awesome",awesome"]
-	Vector [0,1,1,2,1]
-
-The first element is zero as "sucked" did not appear in the sentance, following this pattern, element 2 corresponds to the single use of "this".
+The first element of Vector 2 is zero as "sucked" did not appear in the sentance, following this pattern, element 2 corresponds to the single use of "this".
 Element 4 is equal to two as the word "awesome" appeared twice in the review. 
 
 This vector form allows us to describe each review as a vector with respect to the entire dataset. This vector then becomes the input for the training, and each review status as positive or negative is the output.
