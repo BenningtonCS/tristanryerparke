@@ -4,4 +4,4 @@ Goal: given seperate datasets of positive and negative movie reviews, train and 
 
 ## Preprocessing ##
 
-The given data needs to be converted into signifiagnt numerical format that the gradient ascent training script can use to create the weights.
+The given data needs to be converted into numerical (numpy array) format that the gradient ascent training script can use to create the weights.
