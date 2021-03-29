@@ -101,7 +101,7 @@ These y_hat values seem to be much more "confident" than the other two models, p
 	accuracy =  0.9047619047619048
 	precision =  0.9473684210526315
 	recall =  0.9047619047619048 
-In the beginning I began this project simply, trying to create a preprocessing script which numbered how many positive or negative words were in eac anyh review. I found that most of the preprocessing methods I tried failed to single out words which were signifigantly attached to positive or negative. Therefore the bag of words approach using vectors to describe each review seemed much more promising, and required a less complicated preprocessing script, but more processing power.
+In the beginning I began this project simply, trying to create a preprocessing script which numbered how many positive or negative words were in each review. I found that most of the preprocessing methods I tried failed to single out words which were signifigantly attached to positive or negative. Therefore the bag of words approach using vectors to describe each review seemed much more promising, and required a less complicated preprocessing script, but more processing power.
 
 Through some optimization tips and debugging with justin, I was able to seriously speed up my bag of words code so that it calculated in seconds.
 Overall, the training seemed to be sucessful and I belive the model would work on reviews which have signifigant negative or positive words. Neutral ones it may classify wrongly. A larger dataset might be in hand for this to get better, but the bag of words approach really helps with the neutral reviews as it can take into account the entire sentance and make judgment based on that.
