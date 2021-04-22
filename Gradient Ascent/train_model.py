@@ -15,7 +15,7 @@ y_hat = np.zeros(y.shape[0])
 index_list = list(range(0,x.shape[0]))
 
 iterations = 0
-max_iterations = 20
+max_iterations = 10
 
 while True:
 

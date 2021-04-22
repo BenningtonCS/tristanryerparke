@@ -5,6 +5,7 @@ import math
 import pickle
 import matplotlib.pyplot as plt
 
+
 training_data = pd.read_csv("datasets/training_data.csv")
 
 inputs = training_data['TotalFinishedArea'].to_frame()
