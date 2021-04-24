@@ -4,8 +4,7 @@ This code is mosty derived from the pytorch quckstart tutorial, but updated to i
 
 The network consists of these layers:
 
-    * nn.Linear(28*28, 256)
-
+    * nn.Linear(28*28, 256)c \n
     Hidden Layer which defines the input image tensor size and a tensor of size 256 as output.
     * nn.ReLU()
 
