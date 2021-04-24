@@ -28,17 +28,15 @@ By changing these hyperparameters and training different models, we can see how 
 ## Justin's/pytorch tutorial hyperparamters: ##
 
 Droput 1 = 0.2 Dropout 2 = 0.5 batch_size = 64 epochs = 5 learning rate = 1e-3
-Results:
+
 Accuracy: 64.1%, Avg loss: 0.018137 
 
 ## Same paramters but 15 epochs: ##
 
-Results:
 Accuracy: 74.1%, Avg loss: 0.011130 
 
 ## Dropout layers commented out and 15 epochs: ##
 
-Results:
 Accuracy: 74.9%, Avg loss: 0.010950 
 
 
