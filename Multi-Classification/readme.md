@@ -25,9 +25,7 @@ The model uses a cross entropy loss function and backpropogates the error using 
 
 By changing these hyperparameters and training different models, we can see how the accuracy changes:
 
-## Justin's/pytorch tutorial hyperparamters: ##
-
-Droput 1 = 0.2 Dropout 2 = 0.5 batch_size = 64 epochs = 5 learning rate = 1e-3
+## Justin's/pytorch tutorial hyperparamters: Droput1=0.2 Dropout2=0.5 batch_size=64 epochs=5 learning rate=1e-3 ##
 
 Accuracy: 64.1%, Avg loss: 0.018137 
 
@@ -38,6 +36,15 @@ Accuracy: 74.1%, Avg loss: 0.011130
 ## Dropout layers commented out and 15 epochs: ##
 
 Accuracy: 74.9%, Avg loss: 0.010950 
+
+## Dropout1=0.2 Dropout2=0.5 learning rate=1e-5: epochs=15 ##
+
+Accuracy: 10.0%, Avg loss: 0.035991 
+
+## Dropout1=0.2 Dropout2=0.5 learning rate=1e-2: epochs=15 ##
+
+Accuracy: 84.8%, Avg loss: 0.006728
+
 
 
 
