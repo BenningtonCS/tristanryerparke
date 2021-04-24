@@ -19,6 +19,8 @@ def linear_regression_model(X, weights, bias):
     
 def squared_loss(y_hat, y):
     return (y_hat - y)**2 / 2
+
+#add additional loss function that sums squares of w and add on line 39
     
 def gradient_descent(parameters, step_size, batch_size, l2_lambda):
     with torch.no_grad():
@@ -34,7 +36,7 @@ def train(X, Y, step_size=0.05, batch_size=1, num_epochs=0, l2_lambda=0.9):
     for epoch in range(num_epochs):
         for mini_X, mini_Y in minibatch_iterator(X, Y, batch_size, True):
             Y_hat = linear_regression_model(mini_X, weights, bias)
-            loss = squared_loss(Y_hat, mini_Y)
+            loss = squared_loss(Y_hat, mini_Y) # + l2_lambda * w
             loss.sum().backward()
             gradient_descent([weights, bias], step_size, batch_size, l2_lambda)
         with torch.no_grad():
