@@ -9,7 +9,6 @@ def synthetic_data(w, b, num_examples):
     y +=  np.random.normal(0, 0.01, y.shape)
     return X, y.reshape((-1, 1))
 
-
 def linear_regression_step(x, y, weights, bias, l2_lambda, step_size):
     #Executes one step of linear regression
     y_hat = x @ weights + bias

@@ -38,7 +38,7 @@ linear.weight.data.normal_(0, 0.01) #weights = torch.normal(0, 0.01, size=(m, 1)
 linear.bias.data.fill_(0) #bias = torch.zeros(1, requires_grad=True)
 
 #Declare L2 Lambda value
-l2_lambda = 1-0.9
+l2_lambda = 0.1
 
 #Declare optimizer, loss and data iterator
 optimizer = torch.optim.SGD(linear.parameters(), lr=0.03, weight_decay=l2_lambda)

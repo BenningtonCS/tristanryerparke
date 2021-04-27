@@ -25,3 +25,6 @@ for i in range(0,out_x):
         output[i,j] = torch.sum(sub_mat * g)
 
 print(output)
+
+def cross_correlation(f,g):
+    
