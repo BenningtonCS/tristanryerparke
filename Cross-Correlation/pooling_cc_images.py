@@ -2,6 +2,8 @@ import torch
 from torchvision import datasets
 from torchvision.transforms import ToTensor
 import matplotlib.pyplot as plt
+from manual_functions import cross_correlation, pooling
+
 # label data
 labels_names = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat', 'sandal', 'shirt', 'sneaker', 'bag', 'boot']
 
@@ -15,11 +17,11 @@ img, label = training_data[1]
 
 # Set up a kernel for detecting vertical edges
 vK = torch.tensor([[-1.0, 0, 1.0]])
-vertical_edges = cross_correlation(img.squeeze(), vK, padding=(0,1))
+vertical_edges = cross_correlation(img.squeeze(), vK, padding=1)
 
 # Max/avg pooling with padding and stride
-max_pool = pooling(img.squeeze(), (3, 3), 'max', padding = (1, 1))
-shrink = pooling(img.squeeze(), (3, 3), 'avg', padding = (1, 1), stride=(2, 2))
+max_pool = pooling(img.squeeze(), 'max', padding = 1)
+shrink = pooling(img.squeeze(), 'avg', padding = 1, stride=1)
 
 figure.add_subplot(2, 2, 1) # Upper left
 plt.title(labels_names[label] + " " + str(img.squeeze().shape))

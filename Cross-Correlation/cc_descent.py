@@ -3,6 +3,7 @@ from torchvision import datasets
 from torch.utils import data
 from torch.utils.data import DataLoader
 from torchvision.transforms import ToTensor
+from manual_functions import cross_correlation
 torch.set_printoptions(sci_mode=False)
 
 x = torch.tensor(
@@ -24,22 +25,10 @@ y = torch.tensor(
         [ 0.,  0.,  0.,  0., -1., -1.,  0.],
         [ 0.,  0.,  0., -1., -1.,  0.,  0.]])
 
-def cross_correlation(f,g):
-    x, y  = f.shape
-    u, v = g.shape 
-
-    out_x, out_y = x - u + 1, y - v + 1
-    output = torch.zeros((out_x,out_y))
-    for i in range(0,out_x):
-        for j in range(0,out_y):
-            sub_mat = f[i : u+i, j : v+j]
-            output[i,j] = torch.sum(sub_mat * g)
-    return output
-
 def gradientDescent(parameters, step_size):
     with torch.no_grad():
         for parameter in parameters:
-            print(parameters,"\n")
+            #print(parameters,"\n")
             parameter -= parameter.grad * step_size
             parameter.grad.zero_()
 
@@ -51,9 +40,12 @@ def train(x,y,step_size,num_epochs):
         loss = loss_func(y_hat,y)
         loss.sum().backward()
         gradientDescent([kernel, bias],step_size)
+    return kernel, bias
 
 loss_func = torch.nn.MSELoss() 
-train(x,y,1e-2,10)
+kernel, bias = train(x,y,1e-2,10)
+print("Kernel: {0}, Bias: {1}".format(kernel, bias))
+
 
 
 
