@@ -1,6 +1,6 @@
 # Lenet 5 Pytorch experimentation #
 
-Three files, each based off of this tutorial:
+Five files, each based off of this tutorial:
 https://towardsdatascience.com/implementing-yann-lecuns-lenet-5-in-pytorch-5e05a0911320
 
 * lenet-ish_1.py uses the ReLu activation function.
