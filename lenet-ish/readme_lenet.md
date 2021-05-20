@@ -14,6 +14,7 @@ Training and Validation loss barely changed for each model.
 Tanh gives the best results for training accuracy.
 LeakyReLu is in the lead for validation accuracy.
 The dropout layers in #4had a slight negative effect on the accuracy of the model.
+Sigmoid activation function really seemed to make the results worse.
 
 1: Train accuracy: 92.06   Valid accuracy: 89.70
 
@@ -24,4 +25,7 @@ The dropout layers in #4had a slight negative effect on the accuracy of the mode
 4: Train accuracy: 90.52   Valid accuracy: 88.56
 
 5: Train accuracy: 87.83   Valid accuracy: 86.35
+
+Training #1 for 50 epochs produced a much better training accuracy, but was less accuate on the valudation than 15 epochs.
+Train accuracy: 95.27   Valid accuracy: 89.00
 
