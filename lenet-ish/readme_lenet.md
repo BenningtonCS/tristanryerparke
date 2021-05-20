@@ -14,14 +14,14 @@ Training and Validation loss barely changed for each model.
 Tanh gives the best results for training accuracy.
 LeakyReLu is in the lead for validation accuracy.
 The dropout layers in #4had a slight negative effect on the accuracy of the model.
-1:
-Train accuracy: 92.06   Valid accuracy: 89.70
-2:
-Train accuracy: 92.27   Valid accuracy: 88.48
-3:
-Train accuracy: 92.00   Valid accuracy: 89.54
-4:
-Train accuracy: 90.52   Valid accuracy: 88.56
-5:
-Train accuracy: 87.83   Valid accuracy: 86.35
+
+1: Train accuracy: 92.06   Valid accuracy: 89.70
+
+2: Train accuracy: 92.27   Valid accuracy: 88.48
+
+3: Train accuracy: 92.00   Valid accuracy: 89.54
+
+4: Train accuracy: 90.52   Valid accuracy: 88.56
+
+5: Train accuracy: 87.83   Valid accuracy: 86.35
 
