@@ -34,17 +34,19 @@ class Lenet_Ish_1(nn.Module):
 
         self.fourD_layers = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5,padding=2),
-            nn.LeakyReLU(),
+            nn.Dropout2d(p=0.5),
+            nn.ReLU(),
             nn.AvgPool2d(kernel_size=2),
             nn.Conv2d(in_channels=6,out_channels=16, kernel_size=5, stride=1),
-            nn.LeakyReLU(),
+            nn.Dropout2d(p=0.2),
+            nn.ReLU(),
             nn.AvgPool2d(kernel_size=2),
             nn.Conv2d(in_channels=16,out_channels=120, kernel_size=5),
-            nn.LeakyReLU()
+            nn.ReLU()
         )
         self.flat_layers = nn.Sequential(
             nn.Linear(in_features=120,out_features=84),
-            nn.LeakyReLU(),
+            nn.ReLU(),
             nn.Linear(in_features=84,out_features=n_classes)
         )
     
@@ -84,7 +86,7 @@ def plot_losses(train_losses, valid_losses):
     '''
     
     # temporarily change the style of the plots to seaborn 
-    #plt.style.use('seaborn')
+    plt.style.use('seaborn')
 
     train_losses = np.array(train_losses) 
     valid_losses = np.array(valid_losses)
@@ -100,7 +102,7 @@ def plot_losses(train_losses, valid_losses):
     fig.show()
     
     # change the plot style to default
-    #plt.style.use('default')    
+    plt.style.use('default')    
 
 def train(train_loader, model, criterion, optimizer, device):
 
@@ -172,7 +174,7 @@ def training_loop(model, criterion, optimizer, train_loader, valid_loader, epoch
                   f'Train accuracy: {100 * train_acc:.2f}\t'
                   f'Valid accuracy: {100 * valid_acc:.2f}')
 
-    
+    plot_losses(train_losses, valid_losses)
     
     return model, optimizer, (train_losses, valid_losses)
 
@@ -180,9 +182,7 @@ def training_loop(model, criterion, optimizer, train_loader, valid_loader, epoch
 # parameters
 RANDOM_SEED = 42
 LEARNING_RATE = 0.001
-BATCH_SIZE = 32
 N_EPOCHS = 15
-
 N_CLASSES = 10
 
 torch.manual_seed(RANDOM_SEED)
@@ -191,7 +191,6 @@ model = Lenet_Ish_1(N_CLASSES).to(DEVICE)
 optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
 criterion = nn.CrossEntropyLoss()
 
-model, optimizer, losses = training_loop(model, criterion, optimizer, train_dataloader, valid_dataloader, N_EPOCHS, DEVICE)
+model, optimizer, _ = training_loop(model, criterion, optimizer, train_dataloader, valid_dataloader, N_EPOCHS, DEVICE)
 
-print(losses)
-plot_losses(losses[0],losses[1])
+

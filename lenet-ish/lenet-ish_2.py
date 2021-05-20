@@ -179,11 +179,8 @@ def training_loop(model, criterion, optimizer, train_loader, valid_loader, epoch
 
 # parameters
 RANDOM_SEED = 42
-LEARNING_RATE = 0.01 #.0001
-BATCH_SIZE = 32
+LEARNING_RATE = 0.001
 N_EPOCHS = 15
-
-IMG_SIZE = 32
 N_CLASSES = 10
 
 torch.manual_seed(RANDOM_SEED)

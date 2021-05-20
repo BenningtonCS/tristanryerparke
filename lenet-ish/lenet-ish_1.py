@@ -180,10 +180,7 @@ def training_loop(model, criterion, optimizer, train_loader, valid_loader, epoch
 # parameters
 RANDOM_SEED = 42
 LEARNING_RATE = 0.001
-BATCH_SIZE = 32
 N_EPOCHS = 15
-
-IMG_SIZE = 32
 N_CLASSES = 10
 
 torch.manual_seed(RANDOM_SEED)
@@ -194,5 +191,4 @@ criterion = nn.CrossEntropyLoss()
 
 model, optimizer, _ = training_loop(model, criterion, optimizer, train_dataloader, valid_dataloader, N_EPOCHS, DEVICE)
 
-#Results:
-#Epoch: 14  Train loss: 0.1998      Valid loss: 0.2991      Train accuracy: 92.06   Valid accuracy: 89.70
+
