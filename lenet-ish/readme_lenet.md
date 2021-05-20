@@ -11,8 +11,7 @@ https://towardsdatascience.com/implementing-yann-lecuns-lenet-5-in-pytorch-5e05a
 
 With the same hyperparameters, similar performance was achived at 15 epochs.
 Training and Validation loss barely changed for each model.
-Tanh gives the best results for training accuracy.
-LeakyReLu is in the lead for validation accuracy.
+Relu activation saeemed to perform the best, with leaky relu giving similar results.
 The dropout layers in #4had a slight negative effect on the accuracy of the model.
 Sigmoid activation function really seemed to make the results worse.
 
@@ -28,4 +27,6 @@ Sigmoid activation function really seemed to make the results worse.
 
 Training #1 for 50 epochs produced a much better training accuracy, but was less accuate on the valudation than 15 epochs.
 Train accuracy: 95.27   Valid accuracy: 89.00
+
+It seems as if #1 trained at 15 epochs performs the best amongst all the variations included.
 
