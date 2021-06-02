@@ -1,6 +1,6 @@
 # Lenet 5 Pytorch experimentation #
 
-Three files, each based off of this tutorial:
+Five files, each based off of this tutorial:
 https://towardsdatascience.com/implementing-yann-lecuns-lenet-5-in-pytorch-5e05a0911320
 
 * lenet-ish_1.py uses the ReLu activation function.
@@ -11,17 +11,22 @@ https://towardsdatascience.com/implementing-yann-lecuns-lenet-5-in-pytorch-5e05a
 
 With the same hyperparameters, similar performance was achived at 15 epochs.
 Training and Validation loss barely changed for each model.
-Tanh gives the best results for training accuracy.
-LeakyReLu is in the lead for validation accuracy.
+Relu activation saeemed to perform the best, with leaky relu giving similar results.
 The dropout layers in #4had a slight negative effect on the accuracy of the model.
-1:
-Train accuracy: 92.06   Valid accuracy: 89.70
-2:
-Train accuracy: 92.27   Valid accuracy: 88.48
-3:
-Train accuracy: 92.00   Valid accuracy: 89.54
-4:
-Train accuracy: 90.52   Valid accuracy: 88.56
-5:
-Train accuracy: 87.83   Valid accuracy: 86.35
+Sigmoid activation function really seemed to make the results worse.
+
+1: Train accuracy: 92.06   Valid accuracy: 89.70
+
+2: Train accuracy: 92.27   Valid accuracy: 88.48
+
+3: Train accuracy: 92.00   Valid accuracy: 89.54
+
+4: Train accuracy: 90.52   Valid accuracy: 88.56
+
+5: Train accuracy: 87.83   Valid accuracy: 86.35
+
+Training #1 for 50 epochs produced a much better training accuracy, but was less accuate on the valudation than 15 epochs.
+Train accuracy: 95.27   Valid accuracy: 89.00
+
+It seems as if #1 trained at 15 epochs performs the best amongst all the variations included.
 
